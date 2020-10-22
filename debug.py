@@ -10,9 +10,9 @@ def decorator(old_function):
         ToDayTime = str(datetime.datetime.now())
         old_return = old_function(*args, **kwargs)
         text = os.path.abspath(__file__)
-        print(text)
 
-        data = "Time run function: "+ ToDayTime +'\n'+"Name of function: " + name_str + '\n' + "RETURN of function: " + str(old_return) + '\n' + "*args: "+ str(args)
+        data = "Time run function: "+ ToDayTime +'\n'+"Name of function: " + name_str + '\n' + "RETURN of function: " + str(old_return) +\
+               '\n' + "*args: "+ str(args)  + '\n' + "Path: " + text
         with open('DataTime2', 'a') as f:
             f.write(data)
     return new_function
